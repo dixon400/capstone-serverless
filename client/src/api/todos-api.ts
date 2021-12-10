@@ -16,7 +16,15 @@ export async function getTodos(idToken: string): Promise<Todo[]> {
   console.log('Todos:', response.data)
   return response.data.todos
 }
-
+export async function getNews(){
+  const response = await Axios.get(`${apiEndpoint}/todos`, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  console.log('Todos:', response.data)
+  return response.data
+}
 export async function createTodo(
   idToken: string,
   newTodo: CreateTodoRequest
